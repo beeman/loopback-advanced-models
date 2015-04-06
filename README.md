@@ -43,6 +43,11 @@ All functionality should have an AngularJS demo.
 
 [Create an issue here.](https://github.com/beeman/loopback-advanced-models/issues)
 
+### Watch the meetings here
+
+[Users in Loopback.io](https://www.youtube.com/watch?v=UdsOcOVg_0M)
+[Users in Loopback.io Part 2 (Live)](https://www.youtube.com/watch?v=RRH3oxbJdBs&lc=z13mw1jirsapshvm3225yrmhokm2thjly)
+
 ## Contact
 
 Talk to us on gitter:
