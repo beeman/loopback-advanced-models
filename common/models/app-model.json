@@ -1,0 +1,22 @@
+{
+  "name": "AppModel",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "created": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "modified": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "ownerId": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
