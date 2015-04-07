@@ -5,6 +5,8 @@ module.exports = function (obj) {
     console.log("Creating....");
     if (typeof obj === 'object') {
 
+        var deferred = Q.defer();
+
         /*Object template
             obj = {
                 model: app.models.NameOfModel,
@@ -14,34 +16,34 @@ module.exports = function (obj) {
                 get: returned
             };
         */
-        
-        var ret = [];
+
 
         obj.min = (obj.min - 1) || 0;
         obj.max = obj.max || 10;
 
         if (!obj.model) {
-            console.log('Please define model');
-            return;
+            deferred.reject('Please define model');
         }
         
-        console.log(obj.schema);
-
-        for(obj.min; obj.min<obj.max; obj.min++){
-            obj.model.create(obj.schema, function(err, created){
-                if(err) console.log(err);
-                if(obj.get){
+        var ret = Array();
+        
+        for (obj.min; obj.min < obj.max; obj.min++) {
+            obj.model.create(obj.schema, function (err, created) {
+                if (err) {
+                    console.log(err);
+                    deferred.reject(err);
+                } else if (obj.get) {
                     ret.push(created[obj.get]);
                 } else {
-                    ret.push(created);  
+                    ret.push(created);
                 };
             });
         };
-        
-        //Must return promise
-        //return ret;
+
+        deferred.resolve(ret);
     } else {
-        console.log('Requires an object');
-        return;
+        deferred.reject('Requires an object');
     }
+
+    return deferred.promise;
 }

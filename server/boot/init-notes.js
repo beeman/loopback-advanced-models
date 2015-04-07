@@ -1,5 +1,6 @@
 var faker = require('faker');
 var boot = require('../../boot.js');
+var Q = require('q');
 module.exports = function (app) {
 
     if (!process.env.FAKEDATA) {
@@ -17,9 +18,10 @@ module.exports = function (app) {
             title: faker.company.catchPhrase(),
             content: faker.lorem.paragraph()
         },
+        get: "id"
     };
 
     // Create maxNotes number of Notes
-    boot(obj);
+    boot(obj).then(console.log, console.error);
 
 };
