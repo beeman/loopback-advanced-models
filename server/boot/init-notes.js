@@ -1,3 +1,4 @@
+var faker = require('faker');
 var boot = require('../../boot.js');
 module.exports = function (app) {
 
@@ -20,7 +21,5 @@ module.exports = function (app) {
 
     // Create maxNotes number of Notes
     boot(obj);
-
-    console.log(' - Creating', maxNotes, 'notes');
 
 };

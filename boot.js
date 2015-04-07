@@ -2,7 +2,7 @@ var faker = require('faker');
 var Q = require('q');
 
 module.exports = function (obj) {
-    var deffer = Q.deffer();
+    console.log("Creating....");
     if (typeof obj === 'object') {
 
         /*Object template
@@ -24,9 +24,11 @@ module.exports = function (obj) {
             console.log('Please define model');
             return;
         }
+        
+        console.log(obj.schema);
 
-        for(var i = obj.min; i<obj.max; i++){
-            obj.model(obj.schema, function(err, created){
+        for(obj.min; obj.min<obj.max; obj.min++){
+            obj.model.create(obj.schema, function(err, created){
                 if(err) console.log(err);
                 if(obj.get){
                     ret.push(created[obj.get]);
@@ -36,7 +38,8 @@ module.exports = function (obj) {
             });
         };
         
-        return ret;
+        //Must return promise
+        //return ret;
     } else {
         console.log('Requires an object');
         return;
