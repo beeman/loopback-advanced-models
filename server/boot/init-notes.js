@@ -1,36 +1,26 @@
-module.exports = function(app) {
+var boot = require('../../boot.js');
+module.exports = function (app) {
 
-  if(!process.env.FAKEDATA) {
-    console.log(' - Set FAKEDATA=1 to add fake data');
-    return;
-  } else {
-    console.log(' - Adding fake data');
-  }
-
-    // This helps us fake the data
-  var faker = require('faker');
-
-  // Load the model
-  var Note = app.models.Note;
-
-  // Get max number of items
-  var maxNotes = process.env.MAX_NOTES || 10;
-
-  // Create maxNotes number of Notes
-  for(var i = 0; i < maxNotes; i++) {
-
-    // Define new Note
-    var newNote = {
-      title: faker.company.catchPhrase(),
-      content: faker.lorem.paragraph()
+    if (!process.env.FAKEDATA) {
+        console.log(' - Set FAKEDATA=1 to add fake data');
+        return;
+    } else {
+        console.log(' - Adding fake data');
     }
 
-    // Create the Note
-    Note.create(newNote, function(err, createdNote){
-      if(err) console.log(err);
-    });
-  }
+    obj = {
+        model: app.models.Note,
+        min: 0,
+        max: process.env.MAX_NOTES || 10,
+        schema: {
+            title: faker.company.catchPhrase(),
+            content: faker.lorem.paragraph()
+        },
+    };
 
-  console.log(' - Creating', maxNotes, 'notes');
+    // Create maxNotes number of Notes
+    boot(obj);
+
+    console.log(' - Creating', maxNotes, 'notes');
 
 };
