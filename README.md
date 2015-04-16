@@ -1,5 +1,7 @@
 # loopback-advanced-models
 
+[![Join the chat at https://gitter.im/rgolea/loopback-advanced-models](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rgolea/loopback-advanced-models?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 The aim of this project is to experiment with loopback models and to serve as
 an example for fellow developers.
 
