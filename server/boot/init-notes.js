@@ -17,8 +17,7 @@ module.exports = function (app) {
         schema: {
             title: faker.company.catchPhrase(),
             content: faker.lorem.paragraph()
-        },
-        get: "id"
+        }
     };
 
     // Create maxNotes number of Notes

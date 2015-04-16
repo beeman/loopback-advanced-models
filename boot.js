@@ -24,9 +24,9 @@ module.exports = function (obj) {
         if (!obj.model) {
             deferred.reject('Please define model');
         }
-        
+
         var ret = Array();
-        
+
         for (obj.min; obj.min < obj.max; obj.min++) {
             obj.model.create(obj.schema, function (err, created) {
                 if (err) {
@@ -37,10 +37,13 @@ module.exports = function (obj) {
                 } else {
                     ret.push(created);
                 };
+
+                if (ret[obj.max] != null) {
+                    deferred.resolve(ret);
+                }
             });
         };
 
-        deferred.resolve(ret);
     } else {
         deferred.reject('Requires an object');
     }
