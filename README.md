@@ -16,7 +16,7 @@ project that could show of the more advances usages of modes in loopback.
 
 ## Running this project
 
-    $ git clone https://github.com/beeman/loopback-advanced-models.git
+    $ git clone https://github.com/loopbackers/loopback-advanced-models.git
     $ cd loopback-advanced-models
     $ npm install
     $ npm run dev # run the server in Development mode (with nodemon and fake data)
@@ -68,7 +68,7 @@ of loopback-component-passport.
 
 There should be an API endpoint (/api/auth-providers) that can list the available
 providers, so a client app doesn't need to hardcode this. Somewhat like how it's
-done in [this  commit](https://github.com/beeman/loopback-angular-admin/commit/ad88478ee261b41415eee72fe2466a14bc7aa0be#diff-44f70a8b9cd0111def427647ebf3d4f2R1).
+done in [this  commit](https://github.com/loopbackers/loopback-angular-admin/commit/ad88478ee261b41415eee72fe2466a14bc7aa0be#diff-44f70a8b9cd0111def427647ebf3d4f2R1).
 
 Currently the authentication providers are defined in a file called `providers.json`.
 Ideally the providers should be configured by setting ENV variables. This way they
@@ -80,7 +80,7 @@ For instance, this should start the project with the Facebook-login enabled:
 
 ### Please tell us what should be added
 
-[Create an issue here.](https://github.com/beeman/loopback-advanced-models/issues)
+[Create an issue here.](https://github.com/loopbackers/loopback-advanced-models/issues)
 
 ### Watch the meetings here
 
@@ -91,4 +91,4 @@ For instance, this should start the project with the Facebook-login enabled:
 
 Talk to us on gitter:
 
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/beeman/loopback-advanced-models?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/loopbackers/loopback-advanced-models?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
