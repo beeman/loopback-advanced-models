@@ -93,4 +93,4 @@ For instance, this should start the project with the Facebook-login enabled:
 
 Talk to us on gitter:
 
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/beeman/loopback-advanced-models?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/rgolea/loopback-advanced-models](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rgolea/loopback-advanced-models?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
